@@ -1,0 +1,44 @@
+{
+  "info": { "name": "Simplify Gold Assistant", "_postman_id": "abc123", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    {
+      "name": "Chat: Start",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://127.0.0.1:8000/chat" },
+        "body": { "mode": "raw", "raw": "{\"user_id\":\"u1\",\"user_query\":\"Hi\"}" }
+      }
+    },
+    {
+      "name": "Chat: Ask Gold",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://127.0.0.1:8000/chat" },
+        "body": { "mode": "raw", "raw": "{\"user_id\":\"u1\",\"user_query\":\"I want to invest in gold\"}" }
+      }
+    },
+    {
+      "name": "Chat: Confirm",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://127.0.0.1:8000/chat" },
+        "body": { "mode": "raw", "raw": "{\"user_id\":\"u1\",\"user_query\":\"yes\"}" }
+      }
+    },
+    {
+      "name": "Chat: Amount",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://127.0.0.1:8000/chat" },
+        "body": { "mode": "raw", "raw": "{\"user_id\":\"u1\",\"user_query\":\"1 gram\"}" }
+      }
+    },
+    {
+      "name": "Purchase",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://127.0.0.1:8000/purchase" },
+        "body": { "mode": "raw", "raw": "{\"user_id\":\"u1\",\"amount_grams\":1.0,\"payment_method\":\"wallet\"}" }
+      }
+    },
+    {
+      "name": "History",
+      "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/purchases/u1" } }
+    }
+  ]
+}
